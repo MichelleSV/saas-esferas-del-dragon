@@ -1,0 +1,68 @@
+@import "_variables";
+@import "_mixin";
+@import "_esfera";
+
+* {
+	box-sizing : border-box;
+}
+img{
+	position: absolute;
+	width: $base-tamanio-esfera*2;
+	left: 550px;
+	top:$base-tamanio-esfera*1.8;
+}
+.container {
+	background: white;
+	position: relative;
+	@keyframes latidos {
+	from { transform: none; }
+	50% { transform: scale(1.1); }
+	to { transform: none; }
+	}
+	.esfera{
+		background: $color-esfera;
+		border-radius: $base-tamanio-esfera/2;
+		height: $base-tamanio-esfera;
+		width: $base-tamanio-esfera;
+		padding: $base-tamanio-esfera/4;
+		display: inline-block;
+		animation: latidos .9s infinite;
+		transform-origin: center;
+		margin-bottom: 30px;
+		box-shadow: 0px 0px 30px yellow;
+	}
+	.estrella-1{
+		@include star;
+		@include position-esferas;
+	}
+	.estrella-2{
+		@include star-center(35px,10px);
+		@include star(18px);
+		@include position-esferas($base-tamanio-esfera*0.8,465px);
+	}
+	.estrella-3{
+		@include star-center(30px,10px);
+		@include star(15px);
+		@include position-esferas($base-tamanio-esfera*2.1,420px);
+	}
+	.estrella-4{
+		@include star-center(25px,20px);
+		@include star(13px);
+		@include position-esferas($base-tamanio-esfera*3.3,520px);
+	}
+	.estrella-5{
+		@include star-center(20px,15px);
+		@include star(13px);
+		@include position-esferas($base-tamanio-esfera*3.3,665px);
+	}
+	.estrella-6{
+		@include star(11px);
+		@include star-center(25px,15px);
+		@include position-esferas($base-tamanio-esfera*2.1,770px);
+	}
+	.estrella-7{
+		@include star-center(30px,20px);
+		@include star(10px);
+		@include position-esferas($base-tamanio-esfera*0.8,730px);
+	}
+}
